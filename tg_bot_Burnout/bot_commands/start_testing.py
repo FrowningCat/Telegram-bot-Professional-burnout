@@ -6,22 +6,23 @@ from aiogram.types import ReplyKeyboardRemove
 from loader import dp
 from aiogram import types
 from answers import CallbackOnStart
-from keyboard.types_bot_button.digital_data_type_bytton import towers
+from keyboard.type_bot_button.digital_data_type_bytton import towers
 
 
 @dp.message_handler(Command('on_start_burnout_test'))
 async def on_start_test(message: types.Message):
     id = message.from_user.id
-    with open('users_test_one.json', encoding='utf-8') as json_file:
+    with open('interviewed.json', encoding='utf-8') as json_file:
         data = json.load(json_file)
         for i in data:
             if int(i) == id:
                 user = False
-            break
-        else:
-            user = True
+                break
+            else:
+                user = True
     if user:
-        await message.answer('Сколько вам лет?\nНапишите ответ (только число)', reply_markup=ReplyKeyboardRemove())
+        await message.answer('Сколько вам лет?\nНапишите ответ (только число)',
+                             reply_markup=ReplyKeyboardRemove())
         await CallbackOnStart.Q1.set()
     else:
         await message.answer(text="Вы уже проходили тест")
@@ -50,9 +51,9 @@ async def end(call: types.Message, state: FSMContext):
         text.append(f'{data[i]}\n')
     await call.message.answer(text="Ваши ответы:", reply_markup=ReplyKeyboardRemove())
     await call.message.answer('\n'.join(text))
-    with open('users_test_one.json', encoding='utf-8') as file:
+    with open('interviewed.json', encoding='utf-8') as file:
         data = json.load(file)
         data.update(user)
-        with open('users_test_one.json', 'w', encoding='utf-8') as outfile:
+        with open('interviewed.json', 'w', encoding='utf-8') as outfile:
             json.dump(data, outfile, indent=4, ensure_ascii=False)
     await state.finish()
