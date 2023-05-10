@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardRemove
 from loader import dp
 from aiogram import types
 from answers import CallbackOnStart
-from keyboard.type_bot_button.digital_data_type_bytton import towers
+from keyboard.type_bot_button.digital_data_type_bytton import towers, towers2
 
 
 @dp.message_handler(Command('on_start_burnout_test'))
@@ -40,7 +40,7 @@ async def tower(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=CallbackOnStart.Q2)
 async def tower2(message: types.Message, state: FSMContext):
-    b = towers()
+    b = towers2()
     answer = message.text
     await state.update_data(name=answer)
     await message.answer(
