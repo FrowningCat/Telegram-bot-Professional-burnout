@@ -38,8 +38,18 @@ async def tower(message: types.Message, state: FSMContext):
         reply_markup=b)
     await CallbackOnStart.next()
 
+@dp.message_handler(state=CallbackOnStart.Q2)
+async def tower2(message: types.Message, state: FSMContext):
+    b = towers()
+    answer = message.text
+    await state.update_data(name=answer)
+    await message.answer(
+        text="Вопрос №2\nПосле работы я чувствую себя как 'выжатый лимон'",
+        reply_markup=b)
+    await CallbackOnStart.next()
 
-@dp.callback_query_handler(state=CallbackOnStart.Q2)
+
+@dp.callback_query_handler(state=CallbackOnStart.Q3)
 async def end(call: types.Message, state: FSMContext):
     answer = call.data
     await state.update_data(full_name=call.from_user.full_name)
