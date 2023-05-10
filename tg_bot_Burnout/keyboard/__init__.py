@@ -1,1 +1,1 @@
-from . import  type_bot_button
+from .interviewed_kb import kb
