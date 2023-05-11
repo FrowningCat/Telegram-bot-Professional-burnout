@@ -8,6 +8,7 @@ from aiogram import types
 from answers import CallbackOnStart
 from keybord import kb
 
+
 @dp.message_handler(Command('on_start_burnout_test'))
 async def on_start_test(message: types.Message):
     id = message.from_user.id
@@ -34,12 +35,14 @@ async def tower(message: types.Message):
         reply_markup=kb)
     await CallbackOnStart.next()
 
+
 @dp.message_handler(state=CallbackOnStart.Q2)
 async def tower(message: types.Message):
     await message.answer(
         text="Вопрос №2\nПосле работы я чувствую себя как 'выжатый лимон'",
         reply_markup=kb)
     await CallbackOnStart.next()
+
 
 @dp.message_handler(state=CallbackOnStart.Q3)
 async def tower(message: types.Message):
@@ -48,12 +51,14 @@ async def tower(message: types.Message):
         reply_markup=kb)
     await CallbackOnStart.next()
 
+
 @dp.message_handler(state=CallbackOnStart.Q4)
 async def tower(message: types.Message):
     await message.answer(
         text="Вопрос №4\nЯ хорошо понимаю, что чувствуют мои подчиненные и коллеги, и стараюсь учитывать это в интересах дела",
         reply_markup=kb)
     await CallbackOnStart.next()
+
 
 @dp.message_handler(state=CallbackOnStart.Q5)
 async def tower(message: types.Message):
@@ -62,12 +67,14 @@ async def tower(message: types.Message):
         reply_markup=kb)
     await CallbackOnStart.next()
 
+
 @dp.message_handler(state=CallbackOnStart.Q6)
 async def tower(message: types.Message):
     await message.answer(
         text="Вопрос №6\nПосле работы на некоторое время хочется уединиться от всех и всего",
         reply_markup=kb)
     await CallbackOnStart.next()
+
 
 @dp.message_handler(state=CallbackOnStart.Q7)
 async def tower(message: types.Message):
@@ -76,12 +83,14 @@ async def tower(message: types.Message):
         reply_markup=kb)
     await CallbackOnStart.next()
 
+
 @dp.message_handler(state=CallbackOnStart.Q8)
 async def tower(message: types.Message):
     await message.answer(
         text="Вопрос №8\nЯ чувствую угнетенность и апатию",
         reply_markup=kb)
     await CallbackOnStart.next()
+
 
 @dp.message_handler(state=CallbackOnStart.Q9)
 async def tower(message: types.Message):
@@ -154,6 +163,7 @@ async def tower(message: types.Message):
         reply_markup=kb)
     await CallbackOnStart.next()
 
+
 @dp.message_handler(state=CallbackOnStart.Q18)
 async def tower(message: types.Message):
     await message.answer(
@@ -184,6 +194,7 @@ async def tower(message: types.Message):
         text="Вопрос №21\nНа работе я спокойно справляюсь с эмоциональными проблемами",
         reply_markup=kb)
     await CallbackOnStart.next()
+
 
 @dp.message_handler(state=CallbackOnStart.Q22)
 async def tower(message: types.Message):

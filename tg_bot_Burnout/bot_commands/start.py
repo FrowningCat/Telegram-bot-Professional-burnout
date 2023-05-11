@@ -5,4 +5,5 @@ from loader import dp
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    await message.answer(f"Здравствуйте, {message.from_user.full_name}!\nЭто бот был создан в качестве курсовой работы\nНапишите комманду \help чтобы получить подробную информацию о его возможнастях")
+    await message.answer(f"Здравствуйте, {message.from_user.full_name}!\nЭто бот был создан в качестве курсовой "
+                         f"работы\nНапишите комманду \help чтобы получить подробную информацию о его возможнастях")
