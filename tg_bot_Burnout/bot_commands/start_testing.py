@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardRemove
 from loader import dp
 from aiogram import types
 from answers import CallbackOnStart
-from keybord import kb
+from keyboard import kb
 
 
 @dp.message_handler(Command('on_start_burnout_test'))

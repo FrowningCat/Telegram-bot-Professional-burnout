@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c8f99ee-fc35-437f-ab25-4eab8ced0c6b" name="Changes" comment="Changing_the_description_of_commands_+_added_the_About_command">
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/answers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/answers/burnout_answer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/interviewed.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/keyboard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/keyboard/type_bot_button/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tg_bot_Burnout/keyboard/type_bot_button/digital_data_type_bytton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tg_bot_Burnout/bot_commands/start_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg_bot_Burnout/bot_commands/start_testing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tg_bot_Burnout/type_bot_button/digital_data_type_bytton.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg_bot_Burnout/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tg_bot_Burnout/keyboard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg_bot_Burnout/keyboard/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +30,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/Работа/Проекты/tg bot Burnout",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Работа/Проекты/tg bot Burnout&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\Работа\Проекты\tg bot Burnout\tg_bot_Burnout\keyboard\type_bot_button" />
