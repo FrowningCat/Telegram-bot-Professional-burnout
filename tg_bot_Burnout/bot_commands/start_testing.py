@@ -234,25 +234,11 @@ async def tower(message: types.Message):
         reply_markup=kb)
     arr2.append(message.text)
     await CallbackOnStart.next()
-    print(arr1)
-    print(arr2)
-    print(arr3)
 
-# @dp.callback_query_handler(state=CallbackOnStart.Q23)
-# async def end(call: types.Message):
-#     answer = call.data
-#     await state.update_data(full_name=call.from_user.full_name)
-#     await state.update_data(repost=answer)
-#     data = await state.get_data()
-#     user = {call.from_user.id: data}
-#     text = []
-#     for i in data:
-#         text.append(f'{data[i]}\n')
-#     await call.message.answer(text="Ваши ответы:", reply_markup=ReplyKeyboardRemove())
-#     await call.message.answer('\n'.join(text))
-#     with open('interviewed.json', encoding='utf-8') as file:
-#         data = json.load(file)
-#         data.update(user)
-#         with open('interviewed.json', 'w', encoding='utf-8') as outfile:
-#             json.dump(data, outfile, indent=4, ensure_ascii=False)
-#     await state.finish()
+
+@dp.message_handler(state=CallbackOnStart.Q23)
+async def end(message: types.Message):
+    await message.answer(text="Ваш результат:", reply_markup=ReplyKeyboardRemove())
+    await message.answer(arr1)
+    await message.answer(arr2)
+    await message.answer(arr3)

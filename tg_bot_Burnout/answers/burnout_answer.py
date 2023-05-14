@@ -25,4 +25,3 @@ class CallbackOnStart(StatesGroup):
     Q21 = State()
     Q22 = State()
     Q23 = State()
-    Q24 = State()
