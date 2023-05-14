@@ -8,5 +8,5 @@ b4 = KeyboardButton('4')
 b5 = KeyboardButton('5')
 b6 = KeyboardButton('6')
 
-kb = ReplyKeyboardMarkup()
-kb.add(b0).add(b1).add(b2).add(b3).add(b4).add(b5).add(b6)
+kb = ReplyKeyboardMarkup(resize_keyboard=True)
+kb.add(b0).row(b1, b2, b3).row(b4, b5, b6)
