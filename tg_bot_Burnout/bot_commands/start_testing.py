@@ -239,6 +239,27 @@ async def tower(message: types.Message):
 @dp.message_handler(state=CallbackOnStart.Q23)
 async def end(message: types.Message):
     await message.answer(text="Ваш результат:", reply_markup=ReplyKeyboardRemove())
-    await message.answer(arr1)
-    await message.answer(arr2)
-    await message.answer(arr3)
+    x = [int(s) for s in arr1]
+    X = sum(x)
+    y = [int(s) for s in arr2]
+    Y = sum(y)
+    z = [int(s) for s in arr3]
+    Z = sum(z)
+    if (X < 16):
+        await message.answer("Ваш уровень эмоционального истощения: 1")
+    elif (X > 15) and (X < 25):
+        await message.answer("Ваш уровень эмоционального истощения: 2")
+    else:
+        await message.answer("Ваш уровень эмоционального истощения: 3")
+    if (Y < 6):
+        await message.answer("Ваш уровень деперсонализации: 1")
+    elif (Y > 5) and (Y < 11):
+        await message.answer("Ваш уровень деперсонализации: 2")
+    else:
+        await message.answer("Ваш уровень деперсонализации: 3")
+    if (Z > 36):
+        await message.answer("Ваш уровень редукции профессионализма: 1")
+    elif (Z > 30) and (Z < 37):
+        await message.answer("Ваш уровень редукции профессионализма: 2")
+    else:
+        await message.answer("Ваш уровень редукции профессионализма: 3")
