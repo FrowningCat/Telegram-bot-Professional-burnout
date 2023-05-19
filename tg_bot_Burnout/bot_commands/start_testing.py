@@ -1,3 +1,4 @@
+import os.path
 from aiogram.dispatcher.filters import Command, state
 from aiogram.types import ReplyKeyboardRemove
 from loader import dp
@@ -14,12 +15,18 @@ points_for_the_reduction_of_professionalism = []
 
 @dp.message_handler(Command('on_start_burnout_test'))
 async def on_start_test(message: types.Message):
-    result.append(message.from_user.id)
-    await message.answer('Сколько вам лет?\n(только число)', reply_markup=ReplyKeyboardRemove())
-    result.append(message.text)
-    await message.answer('Кем вы работаете', reply_markup=ReplyKeyboardRemove())
-    result.append(message.text)
-    await CallbackOnStart.Q1.set()
+    path = './test.txt'
+    check_file = os.path.isfile(path)
+    await message.answer(check_file)
+    if check_file:
+        result.append(message.from_user.id)
+        await message.answer('Сколько вам лет?\n(только число)', reply_markup=ReplyKeyboardRemove())
+        result.append(message.text)
+        await message.answer('Кем вы работаете', reply_markup=ReplyKeyboardRemove())
+        result.append(message.text)
+        await CallbackOnStart.Q1.set()
+    else:
+        await message.answer("Упс")
 
 
 @dp.message_handler(state=CallbackOnStart.Q1)
