@@ -6,8 +6,7 @@ from answers import CallbackOnStart
 from keyboard import kb
 
 available_answers = ['0', '1', '2', '3', '4', '5', '6']
-age = []
-work = []
+result = []
 points_for_emotional_exhaustion = []
 points_for_depersonalization = []
 points_for_the_reduction_of_professionalism = []
@@ -15,10 +14,11 @@ points_for_the_reduction_of_professionalism = []
 
 @dp.message_handler(Command('on_start_burnout_test'))
 async def on_start_test(message: types.Message):
+    result.append(message.from_user.id)
     await message.answer('Сколько вам лет?\n(только число)', reply_markup=ReplyKeyboardRemove())
-    age.append(message.text)
+    result.append(message.text)
     await message.answer('Кем вы работаете', reply_markup=ReplyKeyboardRemove())
-    work.append(message.text)
+    result.append(message.text)
     await CallbackOnStart.Q1.set()
 
 
@@ -253,3 +253,9 @@ async def end(message: types.Message):
         await message.answer("Ваш уровень редукции профессионализма: 2")
     else:
         await message.answer("Ваш уровень редукции профессионализма: 3")
+    result.append(emotional_exhaustion)
+    result.append(depersonalization)
+    result.append(reduction_of_professionalism)
+    with open("test.txt", "w") as file:
+        file.write(str(result))
+        file.close()
