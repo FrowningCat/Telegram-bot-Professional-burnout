@@ -17,7 +17,6 @@ points_for_the_reduction_of_professionalism = []
 async def on_start_test(message: types.Message):
     path = './test.txt'
     check_file = os.path.isfile(path)
-    await message.answer(check_file)
     if check_file:
         result.append(message.from_user.id)
         await message.answer('Сколько вам лет?\n(только число)', reply_markup=ReplyKeyboardRemove())
