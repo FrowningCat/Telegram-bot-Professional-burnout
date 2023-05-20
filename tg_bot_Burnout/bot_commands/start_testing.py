@@ -1,5 +1,7 @@
 import os.path
-from aiogram.dispatcher.filters import Command, state
+
+from aiogram.dispatcher import FSMContext
+from aiogram.dispatcher.filters import Command
 from aiogram.types import ReplyKeyboardRemove
 from loader import dp
 from aiogram import types
@@ -233,7 +235,7 @@ async def question(message: types.Message):
 
 
 @dp.message_handler(state=CallbackOnStart.Q23)
-async def end(message: types.Message):
+async def end(message: types.Message, state: FSMContext):
     await message.answer(text="Ваш результат:", reply_markup=ReplyKeyboardRemove())
     emotional_exhaustion = [int(s) for s in points_for_emotional_exhaustion]
     emotional_exhaustion = sum(emotional_exhaustion)
@@ -265,3 +267,4 @@ async def end(message: types.Message):
     with open("test.txt", "w") as file:
         file.write(str(result))
         file.close()
+    await state.finish()
