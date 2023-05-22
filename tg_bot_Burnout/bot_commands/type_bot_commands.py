@@ -6,6 +6,6 @@ async def set_default_commands(dp):
         [
             types.BotCommand("start", "Запустить бота"),
             types.BotCommand("help", "Информация про тест"),
-            types.BotCommand("on_start_burnout_test", "Пройти опрос на тему 'Профессиональное выгорание'"),
+            types.BotCommand("on_start_test", "Выбрать опррс для прохождения"),
         ]
     )

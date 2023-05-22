@@ -9,6 +9,6 @@ async def bot_help(message: types.Message):
             "/start - Запустить бота",
             "/help - Получить список команд",
             "/about - Получить анатацию к проекту",
-            "/on_start_burnout_test - Первый опрос на тему 'Ваш уровень профессионального выгорание'",)
+            "/on_start_test - Выбрать тест'",)
 
     await message.answer("\n".join(text))
