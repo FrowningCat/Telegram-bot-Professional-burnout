@@ -22,7 +22,7 @@ async def on_start_test(message: types.Message, state: FSMContext):
     if check_file:
         result.append(message.from_user.id)
         await message.answer("Данный опрос предназначен для диагностики профессионального выгорания и был разработан"
-                             " Кристиной Маслач и Сьюзан Джексон в 1986 году.\nНапишите /start для наала теста")
+                             " Кристиной Маслач и Сьюзан Джексон в 1986 году.\nНапишите /start для начала теста")
         await CallbackOnStart.Q1.set()
     else:
         await message.answer("Упс, один из файов не найден, обратитесь в поддержку")
@@ -95,7 +95,7 @@ async def question(message: types.Message):
         text="Вопрос №7\nЯ умею находить правильное решение в конфликтных ситуациях, возникающих при общении с коллегами",
         reply_markup=kb)
     module = (int(message.text) - 6) * (-1)
-    points_for_emotional_exhaustion.append(message.module)
+    points_for_emotional_exhaustion.append(module)
     await CallbackOnStart.next()
 
 
