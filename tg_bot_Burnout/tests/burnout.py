@@ -9,6 +9,7 @@ from answers import CallbackOnStart
 from keyboard import kb
 
 result = []
+module = 0
 points_for_emotional_exhaustion = []
 points_for_depersonalization = []
 points_for_the_reduction_of_professionalism = []
@@ -21,15 +22,18 @@ async def on_start_test(message: types.Message, state: FSMContext):
     if check_file:
         result.append(message.from_user.id)
         await message.answer("Данный опрос предназначен для диагностики профессионального выгорания и был разработан"
-                             " Кристиной Маслач и Сьюзан Джексон в 1986 году")
-        await message.answer("Сколько вам лет?\n(только число)")
-        result.append(message.text)
-        await message.answer("Кем вы работаете?")
-        result.append(message.text)
+                             " Кристиной Маслач и Сьюзан Джексон в 1986 году.\nНапишите /start для наала теста")
         await CallbackOnStart.Q1.set()
     else:
         await message.answer("Упс, один из файов не найден, обратитесь в поддержку")
         await state.finish()
+
+
+@dp.message_handler(state=CallbackOnStart.Q0)
+async def question(message: types.Message):
+    await message.answer("Кем вы работаете?")
+    result.append(message.text)
+    await CallbackOnStart.next()
 
 
 @dp.message_handler(state=CallbackOnStart.Q1)
@@ -90,7 +94,8 @@ async def question(message: types.Message):
     await message.answer(
         text="Вопрос №7\nЯ умею находить правильное решение в конфликтных ситуациях, возникающих при общении с коллегами",
         reply_markup=kb)
-    points_for_emotional_exhaustion.append(message.text)
+    module = (int(message.text) - 6) * (-1)
+    points_for_emotional_exhaustion.append(message.module)
     await CallbackOnStart.next()
 
 
