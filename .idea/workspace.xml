@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c8f99ee-fc35-437f-ab25-4eab8ced0c6b" name="Changes" comment="version_1.0">
+    <list default="true" id="0c8f99ee-fc35-437f-ab25-4eab8ced0c6b" name="Changes" comment="Changing_the_description_of_commands_+_added_the_About_command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tg_bot_Burnout/tests/burnout.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg_bot_Burnout/tests/burnout.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,21 +99,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683277458044</updated>
     </task>
-    <task id="LOCAL-00006" summary="version_1.0">
-      <created>1684930449588</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684930449588</updated>
-    </task>
-    <task id="LOCAL-00007" summary="version_1.0">
-      <created>1684930454885</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684930454885</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,8 +123,7 @@
     <MESSAGE value="The_second_brick_of_the_building" />
     <MESSAGE value="Changing_the_description_of_commands_+_added_the_About_command" />
     <MESSAGE value="smoll_fix" />
-    <MESSAGE value="version_1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="version_1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="smoll_fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/tg_bot_Burnout$main.coverage" NAME="main Coverage Results" MODIFIED="1683191445216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
