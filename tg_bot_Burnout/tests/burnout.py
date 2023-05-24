@@ -8,44 +8,36 @@ from aiogram import types
 from answers import CallbackOnStart
 from keyboard import kb
 
-available_answers = ['0', '1', '2', '3', '4', '5', '6']
 result = []
 points_for_emotional_exhaustion = []
 points_for_depersonalization = []
 points_for_the_reduction_of_professionalism = []
 
 
-@dp.message_handler(Command('on_start_burnout_test'))
+@dp.message_handler(Command("on_start_burnout_test"))
 async def on_start_test(message: types.Message, state: FSMContext):
-    path = './test_burnout.txt'
+    path = "./test_burnout.txt"
     check_file = os.path.isfile(path)
     if check_file:
         result.append(message.from_user.id)
-        await message.answer('Описание теста')
-        await message.answer('Сколько вам лет?\n(только число)', reply_markup=ReplyKeyboardRemove())
+        await message.answer("Данный опрос предназначен для диагностики профессионального выгорания и был разработан"
+                             " Кристиной Маслач и Сьюзан Джексон в 1986 году")
+        await message.answer("Сколько вам лет?\n(только число)")
         result.append(message.text)
-        await message.answer('Кем вы работаете', reply_markup=ReplyKeyboardRemove())
+        await message.answer("Кем вы работаете?")
         result.append(message.text)
         await CallbackOnStart.Q1.set()
     else:
-        await message.answer("Упс")
+        await message.answer("Упс, один из файов не найден, обратитесь в поддержку")
         await state.finish()
 
 
 @dp.message_handler(state=CallbackOnStart.Q1)
 async def question(message: types.Message):
-    # if message.text in ['0', '1', '2', '3', '4', '5', '6']:
-    # if message.text.isdigit():
-    #     message.text = int(message.text)
-    #     if 0 <= message.text <= 6:
-    #         points_for_emotional_exhaustion.append(message.text)
-            # await CallbackOnStart.next()
-        # else:
-            await message.answer(
-                text="Вопрос №1\nЯ чувствую себя эмоционально опустошены\nВыберите по шкале от 0 до 6, где 0 это 'Не чусвую совсем себя опустошенным', а 6 'Постоянно чуствую себя опустошенным'",
-                reply_markup=kb)
-            await CallbackOnStart.next()
-            # await message.answer('Введите число')
+    await message.answer(
+        text="Вопрос №1\nЯ чувствую себя эмоционально опустошенным\nВыберите по шкале от 0 до 6, где 0 это 'Не чусвую совсем себя опустошенным', а 6 'Постоянно чуствую себя опустошенным'",
+        reply_markup=kb)
+    await CallbackOnStart.next()
 
 
 @dp.message_handler(state=CallbackOnStart.Q2)
@@ -247,8 +239,7 @@ async def end(message: types.Message, state: FSMContext):
     depersonalization = sum(depersonalization)
     reduction_of_professionalism = [int(s) for s in points_for_the_reduction_of_professionalism]
     reduction_of_professionalism = sum(reduction_of_professionalism)
-    await message.answer("«Эмоциональное истощение» проявляется в переживаниях сниженного эмоционального тонуса, "
-                         "повышенной психической истощаемости и аффективной лабильности, утраты интереса и позитивных "
+    await message.answer("«Эмоциональное истощение» проявляется в переживаниях, утраты интереса и позитивных "
                          "чувств к окружающим, ощущении «пресыщенности» работой, неудовлетворенностью жизнью в целом. "
                          "В контексте синдрома перегорания «деперсонализация» предполагает формирование особых, "
                          "деструктивных взаимоотношений с окружающими людьми.")
@@ -269,7 +260,7 @@ async def end(message: types.Message, state: FSMContext):
         await message.answer("Ваша деперсонализация на среднем уровне")
     else:
         await message.answer("Ваша деперсонализация на высоком уровне")
-    await message.answer("«Редукция профессиональных достижений» отражает степень удовлетворенности медицинского "
+    await message.answer("«Редукция профессиональных достижений» отражает степень удовлетворенности "
                          "работника собой как личностью и как профессионалом. Неудовлетворительное значение этого "
                          "показателя отражает тенденцию к негативной оценке своей компетентности и продуктивности и,"
                          " как следствие, - снижение профессиональной мотивации, нарастание негативизма в отношении "
